@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Original Author: Zed Dash - https://codepen.io/z00f9eb5633/pen/XNQaym -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blend Mode CRT Effect Loader</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        #cursor {
+            background: lime;
+            line-height: 7px;
+            margin-left: 13px;
+            animation: blink 0.8s infinite;
+            width: 22px;
+            height: 5px;
+            
+        }
+
+        @keyframes blink {
+            0% {background: #222}
+            50% {background: lime}
+            100% {background: #222}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="text">
+        <div class="r">Loading <div id="cursor"></div></div>
+        <div class="g">Loading</div>
+        <div class="b">Loading</div>
+    </div>
+</body>
+</html>

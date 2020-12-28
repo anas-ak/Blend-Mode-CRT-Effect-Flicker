@@ -1,0 +1,71 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #202021;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1000;
+        background: repeating-linear-gradient(0deg, #111 0px, #111 1px,
+        transparent 2px, transparent 5px);
+        background-size: 100% 5px;
+        animation: lines 2s ease-out infinite;
+        opacity: 0.3;
+        mix-blend-mode: color-burn;
+        pointer-events: none;
+    }
+    
+    .text, .text > * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .text {
+        >* {
+            font-size: 80px;
+            animation: giggle 1s ease infinite;
+            mix-blend-mode: difference;
+        }
+
+        // FIRST LAYER
+
+        .r {
+            color: #f00;
+            left: 4px;
+            display: flex; 
+            align-items: baseline;
+        }
+
+        // SECOND LAYER
+
+        .g {
+            color: #0f0;
+            animation-delay: -0.7s;
+            left: -9px;
+        }
+
+        // THIRD LAYER 
+
+        .b {
+            color: #00f;
+            animation-delay: -0.4s;
+            left: -5px;
+        }
+    }
+}
+
+@keyframes giggle {
+    0%, 100% {transform: translate(-50%, -50%) translateY(-1.2px); }
+    50% { transform: translate(-50%, -50%) translateY(0.2px); }
+}
+
+@keyframes lines {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 0px 25px; }
+}
